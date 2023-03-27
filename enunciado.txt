@@ -1,0 +1,45 @@
+Nesse exercício vocês projetarão algumas Máquinas de Turing. Para isso vocês utilizarão o Online Turing Machine Simulator. As máquinas de Turing desse simulador/visualizador são um pouco diferentes da MTs do Sipser.
+
+As fitas das MTs do Online Turing Machine Simulator são infinitas em ambas as direções. Em cada passo, além de mover a cabeça de gravação para a direita (Right no Sipser, > no simulador) e esquerda (Left no Sipser, < no simulador), o Online Simulator permite que a cabeça fique parada (- no simulador). A página do Online Simulator tem um manual de duas página para MTs com apenas uma fita e mais um de duas páginas para MTs multifitas. Apenas olhar os exemplos na página é suficiente para programar.
+
+Copie
+Escreva uma MT com uma única fita em um arquivo de nome copie.tm. Essa MT tem inicialmente na sua fita uma string w sobre o alfabeto Σ = {a, b}e ao final deve ter em sua fita a string w#w e a cabeça de leitura e gravação pode estar em qualquer posição.
+
+Por exemplo,
+
+para a string ϵ ao final o conteúdo da fita deve ser #;
+para a string aab ao final o conteúdo da fita deve ser aab#aab;
+Procure estimar o número de passos feitos por sua MT para processar uma string w com n símbolos . Se vocês preferirem, a estimativa pode usar notação assintótica: O(), Ω() ou Θ(). Coloque que um comentário no arquivo copie.tm com essa estimátiva.
+
+Abra espaços
+Escreva uma MT com uma única fita em um arquivo abra_espacos.tm. Essa MT tem inicialmente na sua fita uma três strings u, v e w sobre o alfabeto Σ = {a, b} delimitadas pelo símbolo #. Assim, o conteúdo inicial da fita é a string #u#v#w#. Ao final a máquina deve em sua fita as strings u, v e w com pelo menos um espaço antes do símbolo # que:
+
+separa u de v;
+separa v de w; e
+está ao final de w.
+A posição final da cabeça de leitura e gravação são irrelevantes.
+
+Para que fique mais visível, nos exemplos a seguir, representaremos um espaço por _.
+
+Por exemplo,
+
+para a string #a__#b#a_#, em que u = a_, v = b e w = a_#, ao final o conteúdo da fita deve ser #a__#b_#a_#;
+para a string ####, em que u = v = w = ϵ, ao final o conteúdo da fita deve ser #_#_#_#;
+para a string #ababa#bb#bbbb#, em que u = ababa, v = bb e w = bbbb#, ao final o conteúdo da fita deve ser #ababa_#bb_#bbbb_#;
+Procure estimar o número de passos feitos por sua MT para processar uma string #u#v#w# com n símbolos. Se vocês preferirem, a estimativa pode usar notação assintótica: O(), Ω() ou Θ(). Coloque um comentário no arquivo copie.tm com essa estimativa.
+
+Abra espaços foi uma subrotina que usamos extensivamente para mostrar a equivalência entre MTs multifita e MTs de fita única.
+
+Produto
+Escreva uma MT com uma única fita em um arquivo produto_fita_unica.tm. Essa MT tem inicialmente na sua fita uma string w sobre o alfabeto Σ = {a, b, c} e reconhece a linguagem {aibjck : i × j = k, i, j, k ≥ 1}.
+
+Para buscar inspiração vocês podem procurar traduzir para uma MT o pseudocódigo do Example 3.6 da página 134 da 2a. edição do Sipser. Ao final o conteúdo da fita e a posição da cabeça de leitura e gravação são irrelevantes.
+
+Procure estimar o número de passos feitos por sua MT para processar uma string com n = i + j + k símbolos. Se vocês preferirem, a estimativa pode usar notação assintótica: O(), Ω() ou Θ(). Coloque um comentário no arquivo produto_fita_unica.tm com essa estimativa.
+
+Mais produto
+Escreva uma MT com 3 fitas em um arquivo produto_multifita.tm. Essa MT tem inicialmente na sua fita de entrada uma string w sobre o alfabeto Σ = {a, b, c} e as outras duas fitas têm apenas espaços. A máquina deve reconhecer a linguagem {aibjck : i × j = k, i, j, k ≥ 1}. Ao final o conteúdo das fitas e a posição das cabeças de leitura e gravação são irrelevantes.
+
+Procure fazer uma MT com três fitas que faça menos passos que a MT com fita única. Para ter uma ideia, para processar a string a4b4c16 uma implementação da MT com fita única fez 445 passos enquanto a MT com 3 fitas fez 67.
+
+Procure estimar o número de passos feitos por sua MT para processar uma string com n = i + j + k símbolos. Se vocês preferirem, a estimativa pode usar notação assintótica: O(), Ω() ou Θ(). Coloque um comentário no arquivo produto_multifita.tm com essa estimativa.
